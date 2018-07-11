@@ -280,8 +280,7 @@ onload = function()
       // モデルのワールド行列の生成
       a_wMatrix[0] = a_lMatrix[0];
       mat.multiply(a_wMatrix[0], a_lMatrix[1], a_wMatrix[1] );
-      mat.multiply(a_wMatrix[1], a_bMatrix[1], a_bMatrixInverse[1]);
-
+	    
       // モデル描画
       gl.useProgram(prg_skin);
 

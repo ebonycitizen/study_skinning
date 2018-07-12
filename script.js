@@ -286,25 +286,25 @@ onload = function()
       gl.useProgram(prg_skin);
 
 	    
-	    newMatrix[0] = a_bMatrix[0][0] * a_bMatrix[1][0] * a_bMatrixInverse[1][0];
-	    newMatrix[1] = a_bMatrix[0][1] * a_bMatrix[1][1] * a_bMatrixInverse[1][1];
-	    newMatrix[2] = a_bMatrix[0][2] * a_bMatrix[1][2] * a_bMatrixInverse[1][2];
-	    newMatrix[3] = a_bMatrix[0][3] * a_bMatrix[1][3] * a_bMatrixInverse[1][3];
+	    newMatrix[0] = a_bMatrix[0] * a_bMatrix[1] * a_bMatrixInverse[1];
+	    //newMatrix[1] = a_bMatrix[0][1] * a_bMatrix[1][1] * a_bMatrixInverse[1][1];
+	    //newMatrix[2] = a_bMatrix[0][2] * a_bMatrix[1][2] * a_bMatrixInverse[1][2];
+	    //newMatrix[3] = a_bMatrix[0][3] * a_bMatrix[1][3] * a_bMatrixInverse[1][3];
 	    
-	    newMatrix[4] = a_bMatrix[0][4] * a_bMatrix[1][4] * a_bMatrixInverse[1][4];
-	    newMatrix[5] = a_bMatrix[0][5] * a_bMatrix[1][5] * a_bMatrixInverse[1][5];
-	    newMatrix[6] = a_bMatrix[0][6] * a_bMatrix[1][6] * a_bMatrixInverse[1][6];
-	    newMatrix[7] = a_bMatrix[0][7] * a_bMatrix[1][7] * a_bMatrixInverse[1][7];
+	   // newMatrix[4] = a_bMatrix[0][4] * a_bMatrix[1][4] * a_bMatrixInverse[1][4];
+	    //newMatrix[5] = a_bMatrix[0][5] * a_bMatrix[1][5] * a_bMatrixInverse[1][5];
+	    //newMatrix[6] = a_bMatrix[0][6] * a_bMatrix[1][6] * a_bMatrixInverse[1][6];
+	    //newMatrix[7] = a_bMatrix[0][7] * a_bMatrix[1][7] * a_bMatrixInverse[1][7];
 	    
-	    newMatrix[8] = a_bMatrix[0][8] * a_bMatrix[1][8] * a_bMatrixInverse[1][8];
-	    newMatrix[9] = a_bMatrix[0][9] * a_bMatrix[1][9] * a_bMatrixInverse[1][9];
-	    newMatrix[10] = a_bMatrix[0][10] * a_bMatrix[1][10] * a_bMatrixInverse[1][10];
-	    newMatrix[11] = a_bMatrix[0][11] * a_bMatrix[1][11] * a_bMatrixInverse[1][11];
+	    //newMatrix[8] = a_bMatrix[0][8] * a_bMatrix[1][8] * a_bMatrixInverse[1][8];
+	   // newMatrix[9] = a_bMatrix[0][9] * a_bMatrix[1][9] * a_bMatrixInverse[1][9];
+	   // newMatrix[10] = a_bMatrix[0][10] * a_bMatrix[1][10] * a_bMatrixInverse[1][10];
+	   // newMatrix[11] = a_bMatrix[0][11] * a_bMatrix[1][11] * a_bMatrixInverse[1][11];
 	    
-	    newMatrix[12] = a_bMatrix[0][12] * a_bMatrix[1][12] * a_bMatrixInverse[1][12];
-	    newMatrix[13] = a_bMatrix[0][13] * a_bMatrix[1][13] * a_bMatrixInverse[1][13];
-	    newMatrix[14] = a_bMatrix[0][14] * a_bMatrix[1][14] * a_bMatrixInverse[1][14];
-	    newMatrix[15] = a_bMatrix[0][15] * a_bMatrix[1][15] * a_bMatrixInverse[1][15];
+	   // newMatrix[12] = a_bMatrix[0][12] * a_bMatrix[1][12] * a_bMatrixInverse[1][12];
+	   // newMatrix[13] = a_bMatrix[0][13] * a_bMatrix[1][13] * a_bMatrixInverse[1][13];
+	   // newMatrix[14] = a_bMatrix[0][14] * a_bMatrix[1][14] * a_bMatrixInverse[1][14];
+	   // newMatrix[15] = a_bMatrix[0][15] * a_bMatrix[1][15] * a_bMatrixInverse[1][15];
 
 	    
       // 描画用行列の設定【この行列の設定をどうにかする】

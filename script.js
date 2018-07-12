@@ -277,35 +277,16 @@ onload = function()
       if(bend < 0.25) {angle = bend * 2.0 * Math.PI;}
       else if(bend < 0.50) {angle = (0.5 - bend) * 2.0 * Math.PI;}
       mat.rotate(a_bMatrix[1], angle, [1.0, 0.0, 0.0], a_lMatrix[1]);// src angle axis dest
-
+        
       // モデルのワールド行列の生成
       a_wMatrix[0] = a_lMatrix[0];
-      mat.multiply(a_wMatrix[0], a_lMatrix[1], a_wMatrix[1] );
-	    
+      mat.multiply(a_wMatrix[0], a_lMatrix[1], a_wMatrix[1]);
+
+      newMatrix = mat.identity(mat.create());
+      mat.multiply(a_wMatrix[1], a_bMatrixInverse[1], newMatrix);
+
       // モデル描画
       gl.useProgram(prg_skin);
-
-	    
-	    newMatrix[0] = a_bMatrix[0] * a_bMatrix[1] * a_bMatrixInverse[1];
-	    //newMatrix[1] = a_bMatrix[0][1] * a_bMatrix[1][1] * a_bMatrixInverse[1][1];
-	    //newMatrix[2] = a_bMatrix[0][2] * a_bMatrix[1][2] * a_bMatrixInverse[1][2];
-	    //newMatrix[3] = a_bMatrix[0][3] * a_bMatrix[1][3] * a_bMatrixInverse[1][3];
-	    
-	   // newMatrix[4] = a_bMatrix[0][4] * a_bMatrix[1][4] * a_bMatrixInverse[1][4];
-	    //newMatrix[5] = a_bMatrix[0][5] * a_bMatrix[1][5] * a_bMatrixInverse[1][5];
-	    //newMatrix[6] = a_bMatrix[0][6] * a_bMatrix[1][6] * a_bMatrixInverse[1][6];
-	    //newMatrix[7] = a_bMatrix[0][7] * a_bMatrix[1][7] * a_bMatrixInverse[1][7];
-	    
-	    //newMatrix[8] = a_bMatrix[0][8] * a_bMatrix[1][8] * a_bMatrixInverse[1][8];
-	   // newMatrix[9] = a_bMatrix[0][9] * a_bMatrix[1][9] * a_bMatrixInverse[1][9];
-	   // newMatrix[10] = a_bMatrix[0][10] * a_bMatrix[1][10] * a_bMatrixInverse[1][10];
-	   // newMatrix[11] = a_bMatrix[0][11] * a_bMatrix[1][11] * a_bMatrixInverse[1][11];
-	    
-	   // newMatrix[12] = a_bMatrix[0][12] * a_bMatrix[1][12] * a_bMatrixInverse[1][12];
-	   // newMatrix[13] = a_bMatrix[0][13] * a_bMatrix[1][13] * a_bMatrixInverse[1][13];
-	   // newMatrix[14] = a_bMatrix[0][14] * a_bMatrix[1][14] * a_bMatrixInverse[1][14];
-	   // newMatrix[15] = a_bMatrix[0][15] * a_bMatrix[1][15] * a_bMatrixInverse[1][15];
-
 	    
       // 描画用行列の設定【この行列の設定をどうにかする】
       gl.bindBuffer(gl.UNIFORM_BUFFER, aUBO[2]);
@@ -316,10 +297,10 @@ onload = function()
         a_wMatrix[0][8], a_wMatrix[0][9], a_wMatrix[0][10], a_wMatrix[0][11],
         a_wMatrix[0][12], a_wMatrix[0][13], a_wMatrix[0][14], a_wMatrix[0][15],
 	// 関節 1
-        a_wMatrix[0][0], a_wMatrix[0][1], a_wMatrix[0][2], a_wMatrix[0][3],
-        a_wMatrix[0][4], a_wMatrix[0][5], a_wMatrix[0][6], a_wMatrix[0][7],
-        a_wMatrix[0][8], a_wMatrix[0][9], a_wMatrix[0][10], a_wMatrix[0][11],
-        a_wMatrix[0][12], a_wMatrix[0][13], a_wMatrix[0][14], a_wMatrix[0][15],
+          newMatrix[0], newMatrix[1], newMatrix[2] , newMatrix[3],
+          newMatrix[4], newMatrix[5], newMatrix[6], newMatrix[7],
+          newMatrix[8], newMatrix[9] ,newMatrix[10], newMatrix[11],
+          newMatrix[12], newMatrix[13], newMatrix[14], newMatrix[15],
       ]), gl.DYNAMIC_DRAW);
       gl.bindBuffer(gl.UNIFORM_BUFFER, null);
 

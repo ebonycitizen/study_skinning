@@ -286,7 +286,7 @@ onload = function()
       gl.useProgram(prg_skin);
 
 	    
-	    newMatrix[0] = a_bMatrix[0] * a_bMatrix[1] * a_bMatrixInverse[1];
+	    newMatrix[0] = mat.multiply(a_bMatrix[0], a_bMatrix[1], a_bMatrixInverse[1]);
 	    //newMatrix[1] = a_bMatrix[0][1] * a_bMatrix[1][1] * a_bMatrixInverse[1][1];
 	    //newMatrix[2] = a_bMatrix[0][2] * a_bMatrix[1][2] * a_bMatrixInverse[1][2];
 	    //newMatrix[3] = a_bMatrix[0][3] * a_bMatrix[1][3] * a_bMatrixInverse[1][3];

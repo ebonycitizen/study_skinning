@@ -20,7 +20,7 @@ onload = function()
     var a_lMatrix = [];// ローカル行列
     var a_wMatrix = [];// ワールド行列
     var vpMatrix;
-    var newMatrix = [];
+    var newMatrix;
 
     var vs = load_shader(gl.VERTEX_SHADER, "vs");
     var fs = load_shader(gl.FRAGMENT_SHADER, "fs");
@@ -286,7 +286,7 @@ onload = function()
       gl.useProgram(prg_skin);
 
 	    
-	    newMatrix = a_bMatrix[0] * a_bMatrix[1] * a_bMatrixInverse[1];
+	    newMatrix[0] = a_bMatrix[0][0] * a_bMatrix[1][0] * a_bMatrixInverse[1][0];
 
 	    
       // 描画用行列の設定【この行列の設定をどうにかする】

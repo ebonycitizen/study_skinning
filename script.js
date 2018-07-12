@@ -20,7 +20,7 @@ onload = function()
     var a_lMatrix = [];// ローカル行列
     var a_wMatrix = [];// ワールド行列
     var vpMatrix;
-    var newMatrix;
+    var newMatrix =[];
 
     var vs = load_shader(gl.VERTEX_SHADER, "vs");
     var fs = load_shader(gl.FRAGMENT_SHADER, "fs");
